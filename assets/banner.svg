@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Dark Tech Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070A10" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="primaryTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="50%" stop-color="#A78BFA" />
+      <stop offset="100%" stop-color="#F472B6" />
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <linearGradient id="accentOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EF4444" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glowText" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Subtle Background Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#374151" stroke-width="0.5" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <style>
+    .title {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: url(#primaryTextGrad);
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      fill: #9CA3AF;
+    }
+    .badge-text {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #E5E7EB;
+    }
+    .metric-value {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      fill: #F3F4F6;
+    }
+    .metric-label {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      fill: #9CA3AF;
+    }
+
+    /* CSS Animations for Dynamic Aspects */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.08); }
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      50% { transform: translateY(-15px) translateX(10px); opacity: 0.7; }
+      100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+    }
+
+    @keyframes dashCycle {
+      to { stroke-dashoffset: -40; }
+    }
+
+    @keyframes fillGauge {
+      0% { stroke-dasharray: 0 283; }
+      50% { stroke-dasharray: 210 283; }
+      100% { stroke-dasharray: 240 283; }
+    }
+
+    .pulsing-bg {
+      animation: pulseGlow 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .particle-1 { animation: floatParticle 8s ease-in-out infinite; }
+    .particle-2 { animation: floatParticle 10s ease-in-out infinite 2s; }
+    .particle-3 { animation: floatParticle 7s ease-in-out infinite 4s; }
+
+    .animated-line {
+      stroke-dasharray: 8 8;
+      animation: dashCycle 2s linear infinite;
+    }
+
+    .gauge-progress {
+      stroke-dasharray: 220 283;
+      transition: stroke-dasharray 1s ease;
+    }
+  </style>
+
+  <!-- Base Canvas Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" rx="16" fill="url(#grid)" />
+
+  <!-- DYNAMIC BACKGROUND / AMBIENT ELEMENTS (LAYERED BEHIND TEXT) -->
+  <g id="background-dynamic-elements">
+    <!-- Glowing Orbs in Background -->
+    <circle cx="150" cy="80" r="180" fill="#3B82F6" opacity="0.15" class="pulsing-bg" filter="blur(40px)" />
+    <circle cx="1050" cy="280" r="160" fill="#8B5CF6" opacity="0.15" class="pulsing-bg" filter="blur(40px)" />
+    <circle cx="900" cy="70" r="130" fill="#EC4899" opacity="0.1" class="pulsing-bg" filter="blur(35px)" />
+
+    <!-- Abstract Connecting Nodes / Cloud Grid Lines (Background Tech Theme) -->
+    <path d="M 50 300 Q 250 220 450 280 T 850 240 T 1150 290" fill="none" stroke="#374151" stroke-width="1.5" opacity="0.5" />
+    <path d="M 50 300 Q 250 220 450 280 T 850 240 T 1150 290" fill="none" stroke="url(#accentCyan)" stroke-width="2" class="animated-line" opacity="0.6" />
+
+    <path d="M 100 80 Q 350 150 650 90 T 1100 130" fill="none" stroke="#374151" stroke-width="1.5" opacity="0.3" />
+    <path d="M 100 80 Q 350 150 650 90 T 1100 130" fill="none" stroke="url(#primaryTextGrad)" stroke-width="1.5" class="animated-line" opacity="0.4" />
+
+    <!-- Floating Background Particles -->
+    <circle cx="220" cy="120" r="3" fill="#60A5FA" class="particle-1" />
+    <circle cx="450" cy="70" r="4" fill="#A78BFA" class="particle-2" />
+    <circle cx="780" cy="110" r="3" fill="#F472B6" class="particle-3" />
+    <circle cx="980" cy="190" r="5" fill="#34D399" class="particle-1" />
+    <circle cx="150" cy="240" r="4" fill="#FBBF24" class="particle-2" />
+  </g>
+
+  <!-- SIDE METRIC DECORATIONS (POSITIONED TO NOT OVERLAP FOREGROUND TEXT) -->
+  <g id="side-decorations" transform="translate(850, 65)">
+    <!-- Quota Gauge Widget Container -->
+    <rect x="0" y="0" width="280" height="230" rx="16" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" />
+    
+    <!-- Header of Widget -->
+    <text x="20" y="35" class="metric-label" font-weight="600" fill="#9CA3AF">LIVE QUOTA GOVERNANCE</text>
+    <circle cx="245" cy="30" r="4" fill="#10B981" filter="url(#glowCyan)" />
+
+    <!-- Radial Gauge (Cloud Quota Meter) -->
+    <g transform="translate(80, 130)">
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#1F2937" stroke-width="9" />
+      <circle cx="0" cy="0" r="45" fill="none" stroke="url(#accentCyan)" stroke-width="9" 
+              stroke-linecap="round" stroke-dasharray="210 283" transform="rotate(-90)" class="gauge-progress" filter="url(#glowCyan)" />
+      <text x="0" y="6" text-anchor="middle" class="metric-value">82%</text>
+      <text x="0" y="22" text-anchor="middle" font-size="9" fill="#9CA3AF" font-family="sans-serif">AWS / GCP / Azure</text>
+    </g>
+
+    <!-- Mini Status Indicators -->
+    <g transform="translate(160, 80)">
+      <rect x="0" y="0" width="100" height="38" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+      <text x="10" y="16" font-size="10" fill="#9CA3AF" font-family="sans-serif">Auto-Scale</text>
+      <text x="10" y="30" font-size="11" font-weight="700" fill="#34D399" font-family="sans-serif">ACTIVE</text>
+    </g>
+
+    <g transform="translate(160, 130)">
+      <rect x="0" y="0" width="100" height="38" rx="8" fill="#111827" stroke="#374151" stroke-width="1" />
+      <text x="10" y="16" font-size="10" fill="#9CA3AF" font-family="sans-serif">Limit Alert</text>
+      <text x="10" y="30" font-size="11" font-weight="700" fill="#F59E0B" font-family="sans-serif">NOMINAL</text>
+    </g>
+
+    <!-- Bottom Stat Bar -->
+    <path d="M 20 190 L 260 190" stroke="#374151" stroke-width="1" />
+    <text x="20" y="212" font-size="11" fill="#6B7280" font-family="sans-serif">Multi-Cloud Enforcement Engine</text>
+  </g>
+
+  <!-- FOREGROUND CONTENT: MAIN TITLE, SUBTITLE & BADGES (ALWAYS IN FOREGROUND & CLEAR) -->
+  <g id="foreground-text" transform="translate(70, 0)">
+    <!-- Pill Category Badge -->
+    <g transform="translate(0, 65)">
+      <rect x="0" y="0" width="220" height="32" rx="16" fill="#1E1B4B" stroke="#6366F1" stroke-width="1.2" />
+      <circle cx="18" cy="16" r="5" fill="#818CF8" />
+      <text x="32" y="21" class="badge-text" fill="#C7D2FE">CLOUD GOVERNANCE &amp; FINOPS</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="145" class="title" filter="url(#glowText)">
+      Awesome Cloud Quota Limit Management
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="185" class="subtitle">
+      Curated directory of multi-cloud quota platforms, resource limit enforcement,
+    </text>
+    <text x="0" y="210" class="subtitle">
+      rate-limit automation frameworks &amp; Kubernetes ResourceQuota controls.
+    </text>
+
+    <!-- Feature Tech Pills -->
+    <g transform="translate(0, 245)">
+      <!-- Pill 1: AWS / Azure / GCP -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="160" height="34" rx="8" fill="#1F2937" stroke="#374151" stroke-width="1" />
+        <text x="14" y="21" font-family="sans-serif" font-size="12" font-weight="600" fill="#60A5FA">☁️ AWS • Azure • GCP</text>
+      </g>
+
+      <!-- Pill 2: Kubernetes -->
+      <g transform="translate(172, 0)">
+        <rect x="0" y="0" width="165" height="34" rx="8" fill="#1F2937" stroke="#374151" stroke-width="1" />
+        <text x="14" y="21" font-family="sans-serif" font-size="12" font-weight="600" fill="#A78BFA">☸️ K8s ResourceQuota</text>
+      </g>
+
+      <!-- Pill 3: Rate Limiting & FinOps -->
+      <g transform="translate(349, 0)">
+        <rect x="0" y="0" width="180" height="34" rx="8" fill="#1F2937" stroke="#374151" stroke-width="1" />
+        <text x="14" y="21" font-family="sans-serif" font-size="12" font-weight="600" fill="#F472B6">⚡ Rate-Limiting &amp; FinOps</text>
+      </g>
+    </g>
+  </g>
+</svg>
