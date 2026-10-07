@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Quota-Limit-Management"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Quota-Limit-Management?style=social" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Cloud-Quota-Limit-Management"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Cloud-Quota-Limit-Management?style=social" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Cloud-Quota-Limit-Management/fork"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Cloud-Quota-Limit-Management?style=social" alt="GitHub Forks"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Cloud-Quota-Limit-Management/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Cloud-Quota-Limit-Management?color=blue" alt="License"/></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
@@ -66,7 +66,7 @@ The market spans **hyperscaler native tools** providing baseline quota visibilit
 
 ## 🔓 Open-Source GitHub Projects 🐙
 
-*Sorted by GitHub Stars Count (Descending)* 🌟
+*Sorted by GitHub_Stars_Count (Descending)* 🌟
 
 - **[Traefik](https://github.com/traefik/traefik)** [![Stars](https://img.shields.io/github/stars/traefik/traefik?style=social&color=white)](https://github.com/traefik/traefik/stargazers)  
   **Modern cloud-native edge router and HTTP reverse proxy with built-in rate limiting and request quota middleware**, open-source. **In-flight request limiting and rate limit policies** protect downstream microservices from traffic spikes. **Dynamic configuration discovery** from Kubernetes, Docker, and Swarm. **Automatic TLS certificate management** via Let's Encrypt. 🚀
@@ -142,7 +142,7 @@ Contributions are very welcome! Follow these steps to submit new cloud quota too
 
 1. 🍴 **Fork** the repository on GitHub.
 2. 📝 **Add/edit** entries in `README.md` maintaining table/list structure and formatting.
-3. 🔗 Include project title, official website/GitHub link, exact star count, license, and brief technical summary.
+3. 🔗 Include project title, official website/GitHub link, exact Stars_Count, license, and brief technical summary.
 4. 🚀 Submit a **Pull Request** with a clear explanation of the added tool.
 
 ---
